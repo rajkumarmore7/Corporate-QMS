@@ -1,0 +1,323 @@
+{
+  "info": {
+    "_postman_id": "1a91df59-e88f-4786-810b-bc813953066e",
+    "name": "Corporate QMS Service UAT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39084129"
+  },
+  "item": [
+    {
+      "name": "Client-Services",
+      "item": [
+        {
+          "name": "Save Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userid\": 8,\n    \"message\": \"Creating a brand new corporate client profile\",\n    \"payload\": {\n        \"client\": {\n            \"client_name\": \"Global Tech Solutions\",\n            \"client_type_code\": \"cttd\",\n            \"v_client_vertical_code\": \"cvva\"\n        },\n        \"contacts\": [\n            {\n                \"name\": \"Executive Director Krishna\",\n                \"email\": \"primary.exec1@testqmsdomain.com\",\n                \"mobile\": \"+1-555-01001\"\n            },\n            {\n                \"name\": \"Manager Specialist Pankaj\",\n                \"email\": \"ops.lead1@testqmsdomain.com\",\n                \"mobile\": \"9876541230\"\n            }\n        ],\n        \"client_data\": {\n            \"client\": {\n                \"gstin\": \"27ABCDE9626F1Z6\",\n                \"pancard\": \"ABCDE9626F\",\n                \"biz_type\": \"Manufacturing\",\n                \"cin_number\": \"L87671MH2026PLC164727\",\n                \"tin_number\": \"98765437933\"\n            },\n            \"address\": {\n                \"cityid\": 487256,\n                \"pincode\": \"400067\",\n                \"stateid\": 17,\n                \"address_line1\": \"Building 319, Industrial Zone\",\n                \"address_line2\": \"Phase II\"\n            },\n            \"portfolio\": {\n                \"lob\": \"Commercial Vehicles\",\n                \"product\": \"Product Package Option A\",\n                \"biz_type\": \"Motor\",\n                \"brokerage\": 8.47,\n                \"sub_product\": \"Standard Subcategory Plan\",\n                \"sum_insured\": 43886420,\n                \"renewal_date\": \"2027-01-12\",\n                \"expected_premium\": 89824\n            }\n        }\n    }\n}"
+            },
+            "url": {
+              "raw": "https://mibluat.mahindrainsurancebrokers.com/client-service/clients/save",
+              "protocol": "https",
+              "host": [
+                "mibluat",
+                "mahindrainsurancebrokers",
+                "com"
+              ],
+              "path": [
+                "client-service",
+                "clients",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Check Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userid\": 8,\r\n    \"payload\": {\r\n        \"client\": {\r\n            \"client_name\": \"Mahindra insurance\"\r\n        }\r\n    }\r\n}"
+            },
+            "url": {
+              "raw": "https://mibluat.mahindrainsurancebrokers.com/client-service/clients/check",
+              "protocol": "https",
+              "host": [
+                "mibluat",
+                "mahindrainsurancebrokers",
+                "com"
+              ],
+              "path": [
+                "client-service",
+                "clients",
+                "check"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Client List",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userid\": 8,\n  \"offset\": 0,\n  \"limit\": 10,\n  \"filters\": {\n    \"client_name\": \"\",\n    \"client_type_code\": \"\"\n  }\n}"
+            },
+            "url": {
+              "raw": "https://mibluat.mahindrainsurancebrokers.com/client-service/clients/list",
+              "protocol": "https",
+              "host": [
+                "mibluat",
+                "mahindrainsurancebrokers",
+                "com"
+              ],
+              "path": [
+                "client-service",
+                "clients",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "View Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userid\": 8,\r\n    \"payload\": {\r\n        \"client_UUID\": \"645876468c7351Q7450Q11f1Qb0eeQc018507ef9d5\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://mibluat.mahindrainsurancebrokers.com/client-service/clients/view",
+              "protocol": "https",
+              "host": [
+                "mibluat",
+                "mahindrainsurancebrokers",
+                "com"
+              ],
+              "path": [
+                "client-service",
+                "clients",
+                "view"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n      \"userid\": 8,\r\n      \"message\": \"Creating a brand new corporate client profile\",\r\n      \"payload\": {\r\n          \"client\": {\r\n              \"client_name\": \"Geet Tech Solutions\",\r\n              \"client_type_code\": \"cttc\",\r\n              \"v_client_vertical_code\": \"cvva\",\r\n              \"client_UUID\":\"286909b421050eQ76a5Q11f1Qb933Qc018501b2ab2\"\r\n          },\r\n          \"contacts\": [\r\n              {\r\n                  \"name\": \"Executive Geet 1\",\r\n                  \"email\": \"primary.exec1@testqmsdomain.com\",\r\n                  \"mobile\": \"+1-555-01001\"\r\n              },\r\n              {\r\n                  \"name\": \"Manager Geet 1\",\r\n                  \"email\": \"ops.lead1@testqmsdomain.com\",\r\n                  \"mobile\": \"+1-555-02001\"\r\n              }\r\n          ],\r\n          \"client_data\": {\r\n              \"client\": {\r\n                  \"gstin\": \"Geet\",\r\n                  \"pancard\": \"ABCDE9626F\",\r\n                  \"biz_type\": \"Manufacturing\",\r\n                  \"cin_number\": \"L87671MH2026PLC164727\",\r\n                  \"tin_number\": \"98765437933\"\r\n              },\r\n              \"address\": {\r\n                  \"cityid\": 487256,\r\n                  \"pincode\": \"400067\",\r\n                  \"stateid\": 17,\r\n                  \"address_line1\": \"Building 319, Industrial Zone\",\r\n                  \"address_line2\": \"Phase II\"\r\n              },\r\n              \"portfolio\": {\r\n                  \"lob\": \"Geet Vehicles \",\r\n                  \"product\": \"Product Package Option A\",\r\n                  \"biz_type\": \"Motor\",\r\n                  \"brokerage\": 8.47,\r\n                  \"sub_product\": \"Standard Subcategory Plan\",\r\n                  \"sum_insured\": 43886420,\r\n                  \"renewal_date\": \"2027-01-12\",\r\n                  \"expected_premium\": 89824\r\n              }\r\n          }\r\n      }\r\n  }"
+            },
+            "url": {
+              "raw": "https://mibluat.mahindrainsurancebrokers.com/client-service/clients/save",
+              "protocol": "https",
+              "host": [
+                "mibluat",
+                "mahindrainsurancebrokers",
+                "com"
+              ],
+              "path": [
+                "client-service",
+                "clients",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Master-Services",
+      "item": [
+        {
+          "name": "KDS",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userid\": 8,\r\n    \"offset\": 0, \r\n    \"limit\": 100,\r\n    \"search\": \"\",\r\n    \"payload\": {\r\n        \"key_module\": \"client\",\r\n        \"key_source\": \"approval\",\r\n        \"key_name\": \"status\" \r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://mibluat.mahindrainsurancebrokers.com/master-service/master/kds",
+              "protocol": "https",
+              "host": [
+                "mibluat",
+                "mahindrainsurancebrokers",
+                "com"
+              ],
+              "path": [
+                "master-service",
+                "master",
+                "kds"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Employee",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userid\": 8,\r\n    \"search\": \"\",\r\n    \"payload\": {\r\n        \"employee_code\": \"27050967\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://mibluat.mahindrainsurancebrokers.com/master-service/master/employee",
+              "protocol": "https",
+              "host": [
+                "mibluat",
+                "mahindrainsurancebrokers",
+                "com"
+              ],
+              "path": [
+                "master-service",
+                "master",
+                "employee"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pincode",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userid\": 8,\r\n    \"search\": \"\",\r\n    \"payload\": {\r\n        \"pincode\": \"110015\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://mibluat.mahindrainsurancebrokers.com/master-service/master/pincode",
+              "protocol": "https",
+              "host": [
+                "mibluat",
+                "mahindrainsurancebrokers",
+                "com"
+              ],
+              "path": [
+                "master-service",
+                "master",
+                "pincode"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
