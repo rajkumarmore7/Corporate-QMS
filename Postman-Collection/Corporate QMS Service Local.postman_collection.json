@@ -21,7 +21,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userid\": 8,\n    \"message\": \"Creating a brand new corporate client profile\",\n    \"payload\": {\n        \"client\": {\n            \"client_name\": \"Global Tech Solutions\",\n            \"client_type_code\": \"cttd\",\n            \"v_client_vertical_code\": \"cvva\"\n        },\n        \"contacts\": [\n            {\n                \"name\": \"Executive Director Krishna\",\n                \"email\": \"primary.exec1@testqmsdomain.com\",\n                \"mobile\": \"+1-555-01001\"\n            },\n            {\n                \"name\": \"Manager Specialist Pankaj\",\n                \"email\": \"ops.lead1@testqmsdomain.com\",\n                \"mobile\": \"9876541230\"\n            }\n        ],\n        \"client_data\": {\n            \"client\": {\n                \"gstin\": \"27ABCDE9626F1Z6\",\n                \"pancard\": \"ABCDE9626F\",\n                \"biz_type\": \"Manufacturing\",\n                \"cin_number\": \"L87671MH2026PLC164727\",\n                \"tin_number\": \"98765437933\"\n            },\n            \"address\": {\n                \"cityid\": 487256,\n                \"pincode\": \"400067\",\n                \"stateid\": 17,\n                \"address_line1\": \"Building 319, Industrial Zone\",\n                \"address_line2\": \"Phase II\"\n            },\n            \"portfolio\": {\n                \"lob\": \"Commercial Vehicles\",\n                \"product\": \"Product Package Option A\",\n                \"biz_type\": \"Motor\",\n                \"brokerage\": 8.47,\n                \"sub_product\": \"Standard Subcategory Plan\",\n                \"sum_insured\": 43886420,\n                \"renewal_date\": \"2027-01-12\",\n                \"expected_premium\": 89824\n            }\n        }\n    }\n}"
+              "raw": "{\n    \"userid\": 8,\n    \"message\": \"Creating a brand new corporate client profile\",\n    \"payload\": {\n        \"client\": {\n            \"client_name\": \"Global Tech Solutions\",\n            \"client_type_code\": \"\",\n            \"client_vertical_code\": \"\"\n        },\n        \"contacts\": [\n            {\n                \"name\": \"Executive Director Krishna\",\n                \"email\": \"primary.exec1@testqmsdomain.com\",\n                \"mobile\": \"+1-555-01001\"\n            },\n            {\n                \"name\": \"Manager Specialist Pankaj\",\n                \"email\": \"ops.lead1@testqmsdomain.com\",\n                \"mobile\": \"9876541230\"\n            }\n        ],\n        \"client_data\": {\n            \"client\": {\n                \"gstin\": \"27ABCDE9626F1Z6\",\n                \"pancard\": \"ABCDE9626F\",\n                \"biz_type\": \"Manufacturing\",\n                \"cin_number\": \"L87671MH2026PLC164727\",\n                \"tin_number\": \"98765437933\"\n            },\n            \"address\": {\n                \"cityid\": 487256,\n                \"pincode\": \"400067\",\n                \"stateid\": 17,\n                \"address_line1\": \"Building 319, Industrial Zone\",\n                \"address_line2\": \"Phase II\"\n            },\n            \"portfolio\": {\n                \"lob\": \"Commercial Vehicles\",\n                \"product\": \"Product Package Option A\",\n                \"biz_type\": \"Motor\",\n                \"brokerage\": 8.47,\n                \"sub_product\": \"Standard Subcategory Plan\",\n                \"sum_insured\": 43886420,\n                \"renewal_date\": \"2027-01-12\",\n                \"expected_premium\": 89824\n            }\n        }\n    }\n}"
             },
             "url": {
               "raw": "http://localhost:8081/client-service/clients/save",
@@ -81,7 +81,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userid\": 8,\n  \"offset\": 0,\n  \"limit\": 10,\n  \"filters\": {\n    \"client_name\": \"\",\n    \"client_type_code\": \"\"\n  }\n}"
+              "raw": "{\n  \"userid\": 91,\n  \"offset\": 0,\n  \"limit\": 10,\n  \"filters\": {\n    \"client_name\": \"\",\n    \"client_type_code\": \"\"\n  }\n}"
             },
             "url": {
               "raw": "http://localhost:8081/client-service/clients/list",
@@ -117,7 +117,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"userid\": 8,\r\n    \"payload\": {\r\n        \"client_UUID\": \"646468958cca1eQ7515Q11f1Qb933Qc018501b2ab2\"\r\n    }\r\n}",
+              "raw": "{\r\n    \"userid\": 8,\r\n    \"payload\": {\r\n        \"client_UUID\": \"663855c6b1c0e1Q77cdQ11f1Q8a0fQ9843faf19ef5\"\r\n    }\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -170,6 +170,36 @@
                 "client-service",
                 "clients",
                 "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Client-Owners",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userid\": 8,\n    \"payload\": {\n        \"client_uuid\": \"645876468c7351Q7450Q11f1Qb0eeQc018507ef9d5\",\n        \"client_status_code\": \"\",\n        \"client_status_remarks\": \"\",\n        \"owner_id\": 8,\n        \"owner_type_code\": \"cooo\",\n        \"status_remarks\": \"Initial Primary Owner Assignment\"\n    }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/client-service/clients/approve",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "client-service",
+                "clients",
+                "approve"
               ]
             }
           },
@@ -242,7 +272,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"userid\": 8,\r\n    \"search\": \"\",\r\n    \"payload\": {\r\n        \"employee_code\": \"27050967\"\r\n    }\r\n}",
+              "raw": "{\r\n    \"userid\": 8,\r\n    \"search\": \"\",\r\n    \"payload\": {\r\n        \"employee_code\": \"27046675\"\r\n    }\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -286,7 +316,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"userid\": 8,\r\n    \"search\": \"\",\r\n    \"payload\": {\r\n        \"pincode\": \"110015\"\r\n    }\r\n}",
+              "raw": "{\r\n    \"userid\": 8,\r\n    \"search\": \"\",\r\n    \"payload\": {\r\n        \"pincode\": \"400025\"\r\n    }\r\n}",
               "options": {
                 "raw": {
                   "language": "json"

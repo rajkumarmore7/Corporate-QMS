@@ -179,6 +179,37 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "Client-Owners",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userid\": 8,\n    \"payload\": {\n        \"client_uuid\": \"645876468c7351Q7450Q11f1Qb0eeQc018507ef9d5\",\n        \"client_status_code\": \"\",\n        \"client_status_remarks\": \"\",\n        \"owner_id\": 8,\n        \"owner_type_code\": \"cooo\",\n        \"status_remarks\": \"Initial Primary Owner Assignment\"\n    }\n}"
+            },
+            "url": {
+              "raw": "https://mibluat.mahindrainsurancebrokers.com/client-service/clients/approve",
+              "protocol": "https",
+              "host": [
+                "mibluat",
+                "mahindrainsurancebrokers",
+                "com"
+              ],
+              "path": [
+                "client-service",
+                "clients",
+                "approve"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
